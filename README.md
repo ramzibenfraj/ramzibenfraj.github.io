@@ -3,7 +3,7 @@
 <head>
 	<title></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
@@ -133,14 +133,10 @@
 		</div>
 		    <div class="box-2">
                 <h2>SOCIAL MEDIA</h2>
-                <a href="https://www.facebook.com/ramzi.Benfraj.77"><button>facebook</button></a>
-                <a href="https://www.instagram.com/@ramzi_benfarj/"><button>instagram</button></a>
+                <a href="https://www.facebook.com/ramzi.Benfraj.77"><img src="f1.png" class="info"></a>
+                <a href="https://www.instagram.com/ramzi_benfarj/"><img src="I.png" class="info"></a>
             </div>
 	</div>
 </div>
-
-
-
-
 </body>
 </html>
