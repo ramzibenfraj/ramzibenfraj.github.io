@@ -20,7 +20,7 @@
 			</div>
 			<p class="p1"><i class="material-icons icons1">call</i>
 			+216 20-851-813</p>
-			<p class="p1"><i class="material-icons icons1">email</i>ramzibenfraj3@gmail.com</p>
+			<p class="p1"><i class="material-icons icons1">email</i>rbenfraj35@gmail.com</p>
 		</div>
 
 		<div class="box-1">
