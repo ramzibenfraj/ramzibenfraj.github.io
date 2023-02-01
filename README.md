@@ -1,46 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> mon cv</title>
-    <link rel="stylesheet" href="wrapcv.css">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body>
-    <div id="titre">
-        <h1> MON CV</h1>
-        <div class="photo">
-            <img src="cv.jpg" alt="">
-        </div>
-        <div class="about">
-            <h2>DONNER PERSONNELLE</h2>
-            <p>nom : Benfradj</p>
-            <p>prenom : Ramzi </p>
-            <p>Age : 23</p>
-            <p>Adresse :benkhair nabeul</p>
 
-        </div>
-        <div class="exp">
-            <div class="cv">
-                <h2> MON CV</h2>
-                <p>HTML , CSS , C# ,JAVAFX ,PYTHON</p>
-                <p>UML , SQL ,LINUX </p>
-            </div>
-            <div class="competence">
-                <h2> MES COMPETENCES</h2>
-                <p>solidworks , autocad </p>
-            </div>
-            <div class="button">
-                <h2>MES CONNTES</h2>
+<div class="main">
+	<div class="left">
+		<br>
+		<div class="profile-img"><img src="CV1.jpg"></div>
+
+		<div class="box-1">
+			<div class="heading">
+				<p>CONTACT</p>
+			</div>
+			<p class="p1"><i class="material-icons icons1">call</i>
+			+216 20-851-813</p>
+			<p class="p1"><i class="material-icons icons1">email</i>ramzibenfraj3@gmail.com</p>
+		</div>
+
+		<div class="box-1">
+			<div class="heading">
+				<p>LANGUAGES</p>
+			</div>
+
+			<p class="p1">HTML
+			<div class="skill-container">
+				<div class="skill html"></div>
+			</div>
+			</p>
+
+			<p class="p1">CSS
+			<div class="skill-container">
+				<div class="skill css"></div>
+			</div>
+			</p>
+
+			<p class="p1">JAVASCRIPT
+			<div class="skill-container">
+				<div class="skill js"></div>
+			</div>
+			</p>
+
+
+		</div>
+		<br>
+
+		<div class="box-1">
+			<div class="heading">
+				<p>COMPETANCES</p>
+			</div>
+
+			<p class="p1">WEBSITE DESIGN
+			<div class="skill-container">
+				<div class="skill web"></div>
+			</div>
+			</p>
+
+			<p class="p1">GRAPHIC DESIGN
+			<div class="skill-container">
+				<div class="skill gra"></div>
+			</div>
+			</p>
+
+			
+		</div>
+		<br>
+		<div class="box-1">
+			<div class="heading">
+				<p>LOISIRS</p>
+			</div>
+
+			<div class="h-div">
+				<i class="material-icons icons2">camera_roll</i>
+				<i class="material-icons icons2">music_note</i>
+				<i class="material-icons icons2">motorcycle</i>
+				<i class="material-icons icons2">border_color</i>
+				<i class="material-icons icons2">gaming</i>
+			</div>
+			
+		</div>
+
+	</div>
+
+
+	<div class="right">
+		<div class="name-div">
+			<h1>RAMZI BENFRAJ</h1>
+			<p>Etudiant cycle ingénieur a ITBS</p>
+		</div>
+
+		<div class="box-2">
+			<h2>À PROPOS DE MOI<i class="material-icons icons3" style="font-size: 28px!important; ">perm_identity</i></h2>
+			<p class="p2">
+				<p>nom : Benfradj</p>
+                <p>prenom : ramzi </p>
+                <p>Age : 23</p>
+                <p>Adresse :benkhair nabeul</p>
+			</p>
+		</div>
+
+
+
+		<div class="box-2">
+			<h2>EDUCATION <i class="material-icons icons3" >border_color</i></h2>
+			<p class="p3">2017-2018 
+			<p class="p2">
+				Baccalauréat technique / lycée mahmoud mesaadi nabeul 
+			</p>
+			<p class="p3">2018-2021 
+			<p class="p2">
+				license en génie mecanique / iset nabeul
+			</p>
+
+			<p class="p3">2022 
+			<p class="p2">
+				1ére année cycle ingénieur 
+			</p>
+		</div>
+		<div class="box-2">
+			<h2>PROJTS <i class="material-icons icons3" >folder</i></h2>
+			<p class="p2">
+				-->mini projet javafx (application desktop) 
+			</p>
+			<p class="p2">
+				-->mini projet c# (application desktop) 
+			</p>
+		</div>
+		    <div class="box-2">
+                <h2>SOCIAL MEDIA</h2>
                 <a href="https://www.facebook.com/ramzi.Benfraj.77"><button>facebook</button></a>
-                <a href="https://www.instagram.com/ramzi_benfarj/"><button>instagram</button></a>
+                <a href="https://www.instagram.com/@ramzi_benfarj/"><button>instagram</button></a>
             </div>
+	</div>
+</div>
 
-        </div>
-        
 
-    </div>
+
 
 </body>
 </html>
