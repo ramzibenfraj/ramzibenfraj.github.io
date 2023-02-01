@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Exemple d'un cv</title>
+    <title> mon cv</title>
     <link rel="stylesheet" href="wrapcv.css">
 </head>
 <body>
     <div id="titre">
         <h1> MON CV</h1>
         <div class="photo">
-            <img src="images/cv.jpg" alt="">
+            <img src="cv.jpg" alt="">
         </div>
         <div class="about">
             <h2>DONNER PERSONNELLE</h2>
             <p>nom : Benfradj</p>
-            <p>prenom : ramzi </p>
+            <p>prenom : Ramzi </p>
             <p>Age : 23</p>
             <p>Adresse :benkhair nabeul</p>
 
