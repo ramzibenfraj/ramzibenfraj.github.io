@@ -1,142 +1,102 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+import base64
 
-</head>
-<body>
+from flask import Flask, request, render_template, jsonify
+import pickle
+import numpy as np
+import plotly.express as px
+import pandas as pd
+from matplotlib import pyplot as plt
+from plotly.subplots import make_subplots
+import seaborn as sns
 
-<div class="main">
-	<div class="left">
-		<br>
-		<div class="profile-img"><img src="CV1.jpg"></div>
+app = Flask(__name__)
 
-		<div class="box-1">
-			<div class="heading">
-				<p>CONTACT</p>
-			</div>
-			<p class="p1"><i class="material-icons icons1">call</i>
-			+216 20-851-813</p>
-			<p class="p1"><i class="material-icons icons1">email</i>rbenfraj35@gmail.com</p>
-		</div>
+# Load the RandomForestRegressor model
+with open('model_random_forest.pkl', 'rb') as file:
+    model = pickle.load(file)
 
-		<div class="box-1">
-			<div class="heading">
-				<p>LANGUAGES</p>
-			</div>
-
-			<p class="p1">HTML
-			<div class="skill-container">
-				<div class="skill html"></div>
-			</div>
-			</p>
-
-			<p class="p1">CSS
-			<div class="skill-container">
-				<div class="skill css"></div>
-			</div>
-			</p>
-
-			<p class="p1">JAVASCRIPT
-			<div class="skill-container">
-				<div class="skill js"></div>
-			</div>
-			</p>
+# Load car data (replace 'cleaned_cars_data.csv' with your actual CSV file)
+cars_data = pd.read_csv('cleaned_cars_data.csv')
+selected_features = ['year', 'hp', 'cylinders', 'doors', 'highway_mpg', 'city_mpg', 'popularity', 'price']
+subset_data = cars_data[selected_features]
 
 
-		</div>
-		<br>
-
-		<div class="box-1">
-			<div class="heading">
-				<p>COMPETANCES</p>
-			</div>
-
-			<p class="p1">WEBSITE DESIGN
-			<div class="skill-container">
-				<div class="skill web"></div>
-			</div>
-			</p>
-
-			<p class="p1">GRAPHIC DESIGN
-			<div class="skill-container">
-				<div class="skill gra"></div>
-			</div>
-			</p>
-
-			
-		</div>
-		<br>
-		<div class="box-1">
-			<div class="heading">
-				<p>LOISIRS</p>
-			</div>
-
-			<div class="h-div">
-				<i class="material-icons icons2">camera_roll</i>
-				<i class="material-icons icons2">music_note</i>
-				<i class="material-icons icons2">motorcycle</i>
-				<i class="material-icons icons2">border_color</i>
-				<i class="material-icons icons2">gaming</i>
-			</div>
-			
-		</div>
-
-	</div>
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 
-	<div class="right">
-		<div class="name-div">
-			<h1>RAMZI BENFRAJ</h1>
-			<p>Etudiant cycle ingénieur a ITBS</p>
-		</div>
+@app.route('/predict', methods=['POST'])
+def predict():
+    if request.method == 'POST':
+        try:
+            # Get user input from the form
+            hp = float(request.form['hp'])
+            cylinders = int(request.form['cylinders'])
+            year = int(request.form['year'])
+            doors = float(request.form['doors'])
 
-		<div class="box-2">
-			<h2>À PROPOS DE MOI<i class="material-icons icons3" style="font-size: 28px!important; ">perm_identity</i></h2>
-			<p class="p2">
-				<p>nom : Benfradj</p>
-                <p>prenom : ramzi </p>
-                <p>Age : 23</p>
-                <p>Adresse :benkhair nabeul</p>
-			</p>
-		</div>
+            # Create a NumPy array from the user input for prediction
+            input_features = np.array([[hp, cylinders, year, doors]])
+
+            # Make a prediction using the loaded model
+            prediction = model.predict(input_features)
+
+            # Render HTML template with prediction and input features
+            return render_template('prediction_result.html', hp=hp, cylinders=cylinders,
+                                   year=year, doors=doors, prediction=round(prediction[0], 2))
+
+        except Exception as e:
+            # Handle exceptions or errors here
+            print(str(e))
+            return jsonify({'error': 'An error occurred during prediction.'})
 
 
+@app.route('/plot')
+def plot():
+    # Assuming cars_data and subset_data are defined somewhere
 
-		<div class="box-2">
-			<h2>EDUCATION <i class="material-icons icons3" >border_color</i></h2>
-			<p class="p3">2017-2018 
-			<p class="p2">
-				Baccalauréat technique / lycée mahmoud mesaadi nabeul 
-			</p>
-			<p class="p3">2018-2021 
-			<p class="p2">
-				license en génie mecanique / iset nabeul
-			</p>
+    def generate_plot_div():
+        # Generate Plotly figures
+        fig1 = px.scatter(cars_data, x='doors', y='price', color='doors')
+        fig1.update_layout(width=400, height=400, title="Scatter Plot Price vs Doors")
+        div_fig1 = fig1.to_html(full_html=False)
 
-			<p class="p3">2022 
-			<p class="p2">
-				1ére année cycle ingénieur 
-			</p>
-		</div>
-		<div class="box-2">
-			<h2>PROJTS <i class="material-icons icons3" >folder</i></h2>
-			<p class="p2">
-				-->mini projet javafx (application desktop) 
-			</p>
-			<p class="p2">
-				-->mini projet c# (application desktop) 
-			</p>
-		</div>
-		    <div class="box-2">
-                <h2>SOCIAL MEDIA</h2>
-                <a href="https://www.facebook.com/ramzi.Benfraj.77"><img src="f1.png" class="info"></a>
-                <a href="https://www.instagram.com/ramzi_benfarj/"><img src="I.png" class="info"></a>
-            </div>
-	</div>
-</div>
-</body>
-</html>
+        fig2 = px.scatter(cars_data, x='cylinders', y='price', color='cylinders')
+        fig2.update_layout(width=400, height=400,title="Scatter Plot Price vs cylinders")
+        div_fig2 = fig2.to_html(full_html=False)
+
+        fig3 = px.scatter(cars_data, x='hp', y='price')
+        fig3.update_layout(width=400, height=400,title="Scatter Plot Price vs hp")
+        div_fig3 = fig3.to_html(full_html=False)
+
+        return div_fig1, div_fig2, div_fig3
+
+    def generate_base64_image():
+        correlation_matrix = subset_data.corr()
+
+        plt.figure(figsize=(10, 8))
+        heatmap = sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f", linewidths=.5,
+                               annot_kws={"size": 10})
+        plt.title('Correlation Matrix', fontsize=14)
+        plt.xlabel('Features', fontsize=12)
+        plt.ylabel('Features', fontsize=12)
+        plt.xticks(fontsize=10)
+        plt.yticks(fontsize=10)
+        plt.tight_layout()
+        plt.savefig('correlation_matrix.png')
+        plt.close()
+
+        with open('correlation_matrix.png', 'rb') as img_file:
+            img_base64 = base64.b64encode(img_file.read()).decode('utf-8')
+
+        return img_base64
+
+    div_fig1, div_fig2, div_fig3 = generate_plot_div()
+    img_base64 = generate_base64_image()
+
+    return render_template('dashboard.html', div_fig1=div_fig1, div_fig2=div_fig2, div_fig3=div_fig3, img_base64=img_base64)
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
