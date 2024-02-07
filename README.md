@@ -2,7 +2,7 @@
 
 A portfolio web site completely made in html css and js from ground up.
 
-#### Watch it live here - [Ramzi.netlify.app](https://ramzibenfraj.live/)
+#### Watch it live here - [Ramzi.netlify.app](ramzibenfraj.github.io/)
 
 <br>
 
