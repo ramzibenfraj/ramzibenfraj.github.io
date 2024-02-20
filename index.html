@@ -121,7 +121,7 @@
                 </div>
 
                 <div class="home__handle">
-                    <img src="assets/img/ramzi-removebg-preview.png" alt="" class="home__img">
+                    <img src="assets/img/ramzi-removebg-preview.png" alt="ramzi benfraj portfolio photo" class="home__img">
                 </div>
 
                 <div class="home__social">
@@ -513,7 +513,7 @@
 
             <div class="work__container container grid">
                 <div class="work__card mix web">
-                    <img src="assets/img/phone.png" alt="" class="work__img">
+                    <img src="assets/img/phone.png" alt=" website of E-Comerce (work of ramzi benfraj)" class="work__img">
 
                     <h3 class="work__title">Site E-commerce(MobiShop)</h3>
 
@@ -523,7 +523,7 @@
                 </div>
 
                 <div class="work__card mix web">
-                    <img src="assets/img/logo192.png" alt="" class="work__img">
+                    <img src="assets/img/logo192.png" alt="website of E-Comerce (work of ramzi benfraj)" class="work__img">
 
                     <h3 class="work__title">Site E-Comerce (ShopTec)</h3>
 
@@ -606,28 +606,26 @@
                 <div class="contact__content">
                     <h3 class="contact__title contact__title-form">Write Me your Message</h3>
 
-                    <form action="" class="contact__form">
+                    <form action="https://formspree.io/f/xgegkqeg" method="POST" class="contact__form">
                         <div class="contact__form-div">
-                            <label for="" class="contact__form-tag">Name</label>
-                            <input type="text" placeholder="Enter name" class="contact__form-input">
+                            <label for="name" class="contact__form-tag">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter name" class="contact__form-input" required>
                         </div>
-
+                    
                         <div class="contact__form-div">
-                            <label for="" class="contact__form-tag">Mail</label>
-                            <input type="text" placeholder="Enter email" class="contact__form-input">
+                            <label for="email" class="contact__form-tag">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Enter email" class="contact__form-input" required>
                         </div>
-
+                    
                         <div class="contact__form-div contact__form-area">
-                            <label for="" class="contact__form-tag">Message</label>
-                            <textarea name="" id="" cols="30" rows="10" placeholder="Write your Message"
-                                class="contact__form-input "></textarea>
+                            <label for="message" class="contact__form-tag">Message</label>
+                            <textarea id="message" name="message" cols="30" rows="10" placeholder="Write your Message" class="contact__form-input" required></textarea>
                         </div>
-
-
-                        <button class="button">
+                    
+                        <button type="submit" class="button">
                             Send Message
                         </button>
-                    </form>
+                    </form>                    
 
                 </div>
 
