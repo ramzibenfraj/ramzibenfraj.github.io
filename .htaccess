@@ -1,3 +1,9 @@
 RewriteEngine On
-RewriteCond %{HTTP_HOST} ^www\.ramzibenfraj\.github\.io [NC]
-RewriteRule ^(.*)$ http://ramzibenfraj.github.io/$1 [L,R=301]
+
+# Redirect www to non-www
+RewriteCond %{HTTP_HOST} ^www\.ramzibenfraj\.github\.io$ [NC]
+RewriteRule ^(.*)$ http://ramzibenfraj.github.io/$1 [R=301,L]
+
+# Redirect to HTTPS (optional)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
